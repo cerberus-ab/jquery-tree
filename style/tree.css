@@ -1,0 +1,57 @@
+/* Базовые стили */
+.tree-body {
+    padding: 0;
+    margin: 0;
+}
+.tree-body li {
+    list-style-type: none;
+}
+.tree-node {
+    margin-left: 20px;
+}
+.tree-node.isroot {
+    margin-left: 0;
+}
+/* Изображение и заголовок
+    по умолчанию как закрытый узел */
+.tree-node > .tree-img {
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url(../img/tree-nodes.png) no-repeat 0 0;
+    background-size: auto;
+    background-position: 0 0;
+    cursor: pointer;
+}
+.tree-node > .tree-head {
+    padding-left: 2px;
+    margin-left: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    cursor: default;
+}
+.tree-node > .tree-body {
+    display: none;
+}
+/* Открытый узел */
+.tree-node.isopen > .tree-img {
+    background-position: -20px 0;
+}
+.tree-node.isopen > .tree-body {
+    display: block;
+}
+/* Пустой узел */
+.tree-node.isempty > .tree-img {
+    background-position: -40px 0;
+    opacity: 0.5;
+    cursor: default;
+}
+/* Конечный узел */
+.tree-node.isleaf > .tree-img {
+    background-position: -60px 0;
+    cursor: default;
+}
+.tree-node.isleaf > .tree-head:hover {
+    background: #C0C0C0;
+}
+
